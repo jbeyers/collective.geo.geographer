@@ -48,7 +48,9 @@ class GeoreferencingAnnotator(object):
         self.geo['type'] = type
         self.geo['coordinates'] = coordinates
         self.geo['crs'] = crs
-        notify(ObjectGeoreferencedEvent(self.context))
+        # commented out since it breaks collective.geo.behaviour:
+        # http://plone.293351.n2.nabble.com/collective-geo-behaviour-td7127292.html
+        #notify(ObjectGeoreferencedEvent(self.context))
 
     def removeGeoInterface(self):
         attrs = ['type', 'coordinates', 'crs']
