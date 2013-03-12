@@ -19,6 +19,9 @@ class GeoCoderUtility(object):
     implements(IGeoCoder)
 
     def retrieve(self, address=None, google_api=None):
+        if not google_api:
+            google_api = u"ABQIAAAAaKes6QWqobpCx2AOamo-shTwM0brOpm-"\
+                              "All5BF6PoaKBxRWWERSUWbHs4SIAMkeC1KV98E2EdJKuJw"
         if google_api:
             self.geocoder = geocoders.Google(str(google_api))
         else:
